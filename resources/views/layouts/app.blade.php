@@ -56,6 +56,9 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+							@if (auth()->user()->admin)
+						    <a href="{{url('/admin/products')}}"class="btn btn-block">Gestionar productos</a>
+						    @endif	
                             <a class="btn btn-block" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

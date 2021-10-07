@@ -21,7 +21,28 @@ class ProductController extends Controller
 
    
     public function store(Request $request)
-    {
+   {   
+    $messages=[
+        'name.required'=> 'Debes ingresar nombre del producto',
+        'name.min'=> 'El numero de caracteres debe tener minimo 3',
+        'description.max'=> 'AH sobreepasado numero de caracteres',
+        'description.required'=> 'Debes ingresar descripcion del producto',
+        'price.required'=> 'Debes ingresar precio del producto',
+        'price.numeric'=> 'Ingrese precio valido ',
+        'price.min'=> 'No se admiten valores negativos ',
+        'stock.required'=> 'Ingrese stock del los productos',
+        'stock.numeric'=> 'Ingrese valor númerico ',
+        'stock.min'=> 'No se admiten valores negativos ',
+        'long_description.required'=> 'Ingrese una descripcion detallada'
+     ];
+        $rules=[//reglas de validacion
+        "name"=> 'required|min:3',
+        "description"=> 'required|max:200',
+        "price"=> 'required|numeric|min:0',
+        "stock"=> 'required|numeric|min:0',
+        "long_description"=>'required' 
+        ]; 
+        $this->validate($request,$rules,$messages);
         $product=new Product();
         $product->name=$request->input('name');
         $product->description=$request->input('description');
@@ -61,6 +82,26 @@ class ProductController extends Controller
     
     public function update(Request $request, $id)
     {
+        $messages=[
+            'name.required'=> 'Debes ingresar nombre del producto',
+            'name.min'=> 'El numero de caracteres debe terner minio 3',
+            'description.max'=> 'AH sobrepasado numero de caracteres',
+            'description.required'=> 'Debes ingresar descripcion del producto',
+            'price.required'=> 'Debes ingresar precio del producto',
+            'price.numeric'=> 'Ingrese precio valido ',
+            'price.min'=> 'No se admiten valores negativos ',
+            'long_description.required'=> 'Ingrese una descripcion detallada'
+         ];
+
+        //validar que los campos sean llenados y restricciones
+        $rules=[
+          "name"=> 'required|min:3',
+          "description"=> 'required|max:200',
+          "price"=> 'required|numeric|min:0',
+          "stock"=> 'required|numeric|min:0',
+          "long_description"=>'required' 
+        ];
+        $this->validate($request,$rules,$messages);
         $product=Product::find($id);
         $product->name = $request->input('name');
         $product->description=$request->input('description');
@@ -71,14 +112,11 @@ class ProductController extends Controller
         return redirect('/admin/products');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        $product=Product::find($id);
+        $product->delete();
+        return back();   
     }
 }

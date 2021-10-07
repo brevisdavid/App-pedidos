@@ -23,8 +23,22 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
+    Route::get('/products', 'ProductController@index');//listar
+    Route::get('/products/create', 'ProductController@create');//formulario
+    Route::post('/products', 'ProductController@store');//registrar
+    Route::get('/products/{id}/edit', 'ProductController@edit');//editar los registros
+    Route::post('/products/{id}/edit', 'ProductController@update');//actualizar
+    Route::post('/products/{id}/delete', 'ProductController@destroy');//eliminar form  
+    Route::get('/products/{id}/images', 'ImageController@index');//registrar imagenes
+    Route::post('/products/{id}/images', 'ImageController@store');//formulario
+    Route::delete('/products/{id}/images', 'ImageController@destroy');//Eliminar imagenes
+    Route::get('/products/{id}/images/select/{image}', 'ImageController@select');//Eliminar imagenes
 
- Route::get('/admin/products', 'ProductController@index');//listar 
+
+});
+
+/*  Route::get('/admin/products', 'ProductController@index');//listar 
  Route::get('/admin/products/create', 'ProductController@create');//formulario
  Route::post('/admin/products', 'ProductController@store');//registrar
  Route::get('/admin/products/{id}/edit', 'ProductController@edit');//editar los registros
@@ -34,3 +48,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  Route::post('/admin/products/{id}/images', 'ImageController@store');//formulario
  Route::delete('/admin/products/{id}/images', 'ImageController@destroy');//Eliminar imagenes
   
+ */

@@ -11,18 +11,16 @@
     <div class="container">
         
         <div class="section text-center">
-            <h3 class="title">Imagenes de producto "{{$product->name}}"</h3>
+            <h3 class="title">Imágenes de producto "{{$product->name}}"</h3>
             <div class="team">
              <div class="row">
-                
-                   <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data">
                        {{ csrf_field() }}
                        <input type="file" name="photo" required>
                        <button type="submit" class="btn btn-primary">Subir nueva imagen</button>
                        <a href="{{url('/admin/products')}}"  class="btn btn-default">Volver a listado de producto</a>        
-
-                   </form>
-                 <hr>
+                    </form>
+               <hr>
                  @foreach ( $images as  $image  )
                  <div class="col-md-4">
                     <div class="panel panel-default">
@@ -37,13 +35,13 @@
                         <button type="button"  class="btn btn-info btn-fab btn-fab-mini btn-round" rel="tooltip"
                         title="Imagen seleccionada del producto">
                             <i class="material-icons">favorite</i>
-                        </a>   
+                        </button>
                         @else
                         <a href="{{url('/admin/products/'.$product->id.'/images/select/'.$image->id)}}"   class="btn btn-primary btn-fab btn-fab-mini btn-round">
                             <i class="material-icons">favorite</i>
                         </a>   
                         @endif
-                        </form>
+                    </form>
                         </div>
                     </div>
                  </div>

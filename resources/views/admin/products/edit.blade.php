@@ -39,7 +39,7 @@
           <div class="col-sm-6">
             <div class="form-group label-floating">
                 <label class="control-label">Stock de producto</label>
-                <input type="number" step="0.01" class="form-control" name="stock" value="{{$product->stock}}">
+                <input type="number" step="0.001" class="form-control" name="stock" value="{{$product->stock}}">
             </div>
           </div>
           <div class="col-sm-6">
