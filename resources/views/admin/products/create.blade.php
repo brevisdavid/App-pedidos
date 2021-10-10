@@ -54,7 +54,7 @@
             {{old('long_description')}}
             </textarea>
             <button type="submit"  class="btn btn-success">Registrar producto</button>
-            <a href="url('/admin/products')" class="btn btn-default">Cancelar</a>
+            <a href="{{url('/admin/products')}}" class="btn btn-default">Cancelar</a>
             </form>
         </div>
 

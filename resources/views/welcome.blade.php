@@ -1,6 +1,25 @@
 @extends('layouts.app')
 @section('title','Bienvenido a Limpiazo')
 @section('body-class','landing-page')
+@section('styles')
+<style>
+    .team.row.col-md-4{
+         margin-bottom: 5em;
+     }
+     .row{
+         display: -webkit-flex;
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         flex-wrap: wrap;
+     }
+     .row >[class*='col-']{
+         display: flex;
+         flex-direction: column;
+     }
+     
+</style>
+@endsection
 @section('content')
 <div class="header header-filter" style="background-image: url('{{asset('img/pajaro.jpg')}}');">
     <div class="container">
@@ -66,25 +85,29 @@
 
             <div class="team">
                 <div class="row">
-                    @foreach ($products as $product)
+                    @foreach ($products as $item)
                         
                     
                     <div class="col-md-4">
                         <div class="team-player">
-                             <img src="{{$product->featured_image_url}}" alt="Thumbnail Image" class="img-raised img-circle"> 
-                            <h4 class="title">{{$product->name}}<br/>
-                                 <small class="text-muted">{{--{{$product->category->name}}--}}</small> 
+                             <img src="{{$item->featured_image_url}}" alt="Thumbnail Image" class="img-raised img-circle"> 
+                            <h4 class="title">
+                                <a href="{{url('/products/'.$item->id)}}">{{$item->name}}</a>
+                                <br/>
+                                 <small class="text-muted">{{--{{$product->category->name}}{{$item->category ? $item->category ->name :'General'}}--}}</small> 
                             </h4>
-                            <p class="description">{{$product->description}} <a href="#"></a></p>
+                            <p class="description">{{$item->description}} <a href="#"></a></p>
                         </div> 
                     </div>
                     @endforeach   
                     </div> 
+                    <div class="text-center">
+                        {{$products->links()}}
+                    </div>               
                 </div>
             </div>
 
         </div>
-
 
         <div class="section landing-section">
             <div class="row">

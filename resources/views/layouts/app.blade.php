@@ -18,7 +18,7 @@
 	<!-- CSS Files -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('css/material-kit.css')}}" rel="stylesheet"/>
-
+    @yield('styles')
 </head>
 
 <body class="@yield('body-class')">
@@ -32,7 +32,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a class="navbar-brand" href="{{url('/')}}">Chanchito limpio</a>
+        		<a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/logotipo.png')}}" width="350" height="140"  alt=""></a>
         	</div>
 
         	<div class="collapse navbar-collapse" id="navigation-example">
@@ -56,6 +56,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+						    <a href="/home" class="btn btn-block">Dashboard</a>
 							@if (auth()->user()->admin)
 						    <a href="{{url('/admin/products')}}"class="btn btn-block">Gestionar productos</a>
 						    @endif	

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Cart;
 
 class User extends Authenticatable
 {
@@ -41,4 +42,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function carts()
+    {
+        return$this->hasMany(Cart::class);
+    }
+    public function getCartAttribute()
+    {
+        $cart=$this->carts()->where('status','Active')->first();
+        if ($cart) {
+         return$cart;
+        }
+        $cart=new Cart();
+        $cart->status='Active';
+        $cart->user_id=$this->id;
+        $cart->save();
+        return$cart;
+    
+    }
 }

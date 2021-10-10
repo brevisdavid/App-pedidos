@@ -15,7 +15,7 @@ class CreateCartDetailsTable extends Migration
     {
         Schema::create('cart_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('cantidad');
+            $table->integer('cantidad')->nullable();
             $table->integer('descuento')->nullable()->default(0);
             //fk header
             $table->unsignedBigInteger('cart_id');
