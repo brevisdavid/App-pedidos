@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="title">Limpiazo confiabilidad</h2>
-                    <h5 class="description">Puedes comparar precios elegir productos hacer pedidos cuabndo estes seguro</h5>
+                    <h5 class="description">Puedes comparar precios elegir productos hacer pedidos cuando estes seguro</h5>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                                 <i class="material-icons">verified_user</i>
                             </div>
                             <h4 class="info-title">Pago seguro</h4>
-                            <p>Todos los pedidos seran recepcionados personalmente por llamada y confimacion por correo electrónico para una mejor atencion,
+                            <p>Todos los pedidos seran recepcionados personalmente por llamada y confimación por correo electrónico para una mejor atencion,
                                  los pagos se realizaran una ves concretado las entregas.</p>
                         </div>
                     </div>
