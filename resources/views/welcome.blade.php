@@ -112,8 +112,8 @@
         <div class="section landing-section">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="text-center title">Aun no te has registrado</h2>
-                    <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
+                    <h2 class="text-center title">¡Aun no te has registrado!</h2>
+                    <h4 class="text-center description">Si deseas contáctanos sobre cualquier producto. Estaremos atentos a cualquier inquietud que quieras.</h4>
                     <form class="contact-form">
                         <div class="row">
                             <div class="col-md-6">
