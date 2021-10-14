@@ -94,7 +94,7 @@
                             <h4 class="title">
                                 <a href="{{url('/products/'.$item->id)}}">{{$item->name}}</a>
                                 <br/>
-                                 <small class="text-muted">{{--{{$product->category->name}}{{$item->category ? $item->category ->name :'General'}}--}}</small> 
+                                 <small class="text-muted">{{--{{$product->category->name}}{{$item->category ? $item->category ->name :'General'}}--}}{{item->price}}</small> 
                             </h4>
                             <p class="description">{{$item->description}} <a href="#"></a></p>
                         </div> 
