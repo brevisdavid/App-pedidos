@@ -30,13 +30,14 @@
                     <label class="control-label">Nombre del producto</label>
                     <input type="text" class="form-control" name="name" value="{{old('name')}}">
                 </div>
-            </div>
+             </div>
             <div class="col-sm-6">
             <div class="form-group label-floating">
                 <label class="control-label">Descripcion producto</label>
                 <input type="text" class="form-control" name="description" value="{{old('description')}}"  >
             </div>
             </div>
+
             <div class="col-sm-6">
             <div class="form-group label-floating">
                 <label class="control-label">Precio del producto</label>
@@ -45,11 +46,32 @@
             </div>
             <div class="col-sm-6">
                 <div class="form-group label-floating">
-                    <label class="control-label">Ingrese numero de productos</label>
+                    <label class="control-label">Ingrese cantidad de productos</label>
                     <input type="number" class="form-control" name="stock" value="{{old('stock')}}">
-                </div>
-                </div>
-          </div>
+             </div>
+             </div>
+            </div>
+            <div class="row">
+                    {{-- <div class="col-sm-6">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Descripción Corta</label>
+                        <input type="text" class="form-control" name="description" value="{{old('description')}}"  >
+                    </div>
+                    </div> --}}
+                    <div class="col-sm-6">
+                    <div class="form-group label-floating">
+                    <label class="control-label">Categoría del producto</label>
+                    <select name="category_id" class="form-control"title="Seleccione categoría" required>
+                        <option >Seleccione categoría</option>
+                        @foreach ($categories as $category)
+                        <option style="padding: 10px;" value="{{$category->id}}">{{$category->name}}</option>    
+                        @endforeach
+                    </select>
+                    </div>
+                    </div>
+    
+
+            </div>
             <textarea class="form-control" name="long_description" placeholder="Descripcion detallada del producto" rows="5">
             {{old('long_description')}}
             </textarea>

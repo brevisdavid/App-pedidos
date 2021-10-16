@@ -94,8 +94,8 @@
                             <h4 class="title">
                                 <a href="{{url('/products/'.$item->id)}}">{{$item->name}}</a>
                                 <br/>
-                                 <small class="text-muted">{{--{{$product->category->name}}{{$item->category ? $item->category ->name :'General'}}--}}{{item->price}}</small> 
-                            </h4>
+                                 <small class="text-muted">{{$item->category_name}}</small> 
+                            </h4>{{--{{$product->category->name}}{{$item->category ? $item->category ->name :'General'}}{{$item->price}}--}}
                             <p class="description">{{$item->description}} <a href="#"></a></p>
                         </div> 
                     </div>
@@ -150,6 +150,20 @@
     </div>
 
 </div>
-
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+56998555521", // WhatsApp number
+            call_to_action: "Estamos a disposición", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
 @include('includes.footer')
 @endsection

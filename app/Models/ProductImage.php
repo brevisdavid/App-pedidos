@@ -23,4 +23,6 @@ class ProductImage extends Model
         return'/images/products/'. $this->image;
         
     }
+    
+   
 }

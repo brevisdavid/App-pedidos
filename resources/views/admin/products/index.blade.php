@@ -34,7 +34,7 @@
                                 <td class="text-center">{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->description}}</td>
-                                <td>{{$product->category ? $product->category ->name :'General'}}</td>
+                                <td>{{$product->category_name}}</td>
                                 <td class="text-right">{{$product->price}}</td>
                                 <td class="text-right">{{$product->stock}}</td>
                                 <td class="td-actions text-right">
@@ -60,19 +60,13 @@
                             @endforeach
                         </tbody>
                     </table>
-                                
-                    {{ $products->links() }}
-                 
-                    
+                    {{$products->links()}}               
                 </div>
+                
             </div>
 
         </div>
-
-
-        
     </div>
-
 </div>
 
 @include('includes.footer')

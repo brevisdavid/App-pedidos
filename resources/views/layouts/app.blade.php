@@ -58,6 +58,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 						    <a href="/home" class="btn btn-block">Dashboard</a>
 							@if (auth()->user()->admin)
+							<a href="{{url('/admin/categories')}}" class="btn btn-block">Gestionar categoría</a>
 						    <a href="{{url('/admin/products')}}"class="btn btn-block">Gestionar productos</a>
 						    @endif	
                             <a class="btn btn-block" href="{{ route('logout') }}"
@@ -73,9 +74,10 @@
                     </li>
                 @endguest
 		            <li>
-		                <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-twitter"></i>
-						</a>
+						<a href="https://wa.me/56998555521?" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+		               {{--  <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+				         <i class="fa fa-twitter"></i> <i class="bi bi-whatsapp"></i>
+						</a> --}}
 		            </li>
 		            <li>
 		                <a href="https://www.facebook.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">

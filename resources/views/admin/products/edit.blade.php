@@ -28,26 +28,26 @@
                     <label class="control-label">Nombre del producto</label>
                     <input type="text" class="form-control" name="name" value="{{$product->name}}">
                 </div>
-            </div>
-            <div class="col-sm-6">
-            <div class="form-group label-floating">
+              </div>
+             <div class="col-sm-6">
+             <div class="form-group label-floating">
                 <label class="control-label">Precio del producto</label>
                 <input type="number" step="0.01" class="form-control" name="price" value="{{$product->price}}">
-            </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group label-floating">
+             </div>
+             </div>
+             <div class="col-sm-6">
+             <div class="form-group label-floating">
                 <label class="control-label">Descripcion producto</label>
                 <input type="text" class="form-control" name="description"value="{{old('description',$product->description)}}">
-            </div> {{--{{$product->description}} sintasis para mostrar los productos ingresados--}}
-            </div>
-            <div class="col-sm-6">
+              </div> {{--{{$product->description}} sintasis para mostrar los productos ingresados--}}
+             </div>
+             <div class="col-sm-6">
                 <div class="form-group label-floating">
                     <label class="control-label">Stock de producto</label>
                     <input type="number" step="0.01" class="form-control" name="stock" value="{{$product->stock}}">
                 </div>
               </div>
+            </div>
             <textarea class="form-control" name="long_description" placeholder="Descripcion detallada del producto" rows="5">
                 {{old('long_description',$product->long_description)}}
             </textarea>

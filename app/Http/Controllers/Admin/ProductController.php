@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 class ProductController extends Controller
 {
     
@@ -16,7 +17,8 @@ class ProductController extends Controller
     
     public function create()
     {
-        return view ('admin.products.create');  
+        $categories=Category::orderBy('name')->get();
+        return view ('admin.products.create')->with(compact('categories'));  
     }
 
    
@@ -49,16 +51,12 @@ class ProductController extends Controller
         $product->price=$request->input('price');
         $product->stock=$request->input('stock');
         $product->long_description=$request->input('long_description');
+        $product->category_id=$request->category_id;
         $product->save();//Insertamos productos a la db
         return redirect('/admin/products');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show($id)
     {
         //
@@ -97,7 +95,7 @@ class ProductController extends Controller
          ];
 
         //validar que los campos sean llenados y restricciones
-        $rules=[
+        $rules=[  
           "name"=> 'required|min:3',
           "description"=> 'required|max:200',
           "price"=> 'required|numeric|min:0',
