@@ -74,7 +74,7 @@
                     </li>
                 @endguest
 		            <li>
-						<a href="https://wa.me/56998555521?" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+						<a href="https://wa.me/56968437401?" class="whatsapp btn btn-simple btn-white btn-just-icon" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 		               {{--  <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
 				         <i class="fa fa-twitter"></i> <i class="bi bi-whatsapp"></i>
 						</a> --}}

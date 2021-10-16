@@ -154,7 +154,7 @@
 <script type="text/javascript">
     (function () {
         var options = {
-            whatsapp: "+56998555521", // WhatsApp number
+            whatsapp: "+56968437401", // WhatsApp number
             call_to_action: "Estamos a disposición", // Call to action
             position: "right", // Position may be 'right' or 'left'
         };
