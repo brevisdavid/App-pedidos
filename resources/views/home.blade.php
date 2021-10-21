@@ -13,9 +13,9 @@
         <div class="section ">
             <h2 class="title text-center">Dashboard</h2>
             <div class="card-body">
-                @if (session('status'))
+                @if (session('notificacion'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        {{ session('notificacion') }}
                     </div>
                 @endif
                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
@@ -77,6 +77,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <p>
+                <strong>Importe a pagar:</strong>{{auth()->user()->cart->total}}
+            </p>
             <div class="text-center">
            <form action="{{url('/order')}}" method="POST">
             {{ csrf_field() }}

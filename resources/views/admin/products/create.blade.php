@@ -62,7 +62,7 @@
                     <div class="form-group label-floating">
                     <label class="control-label">Categoría del producto</label>
                     <select name="category_id" class="form-control"title="Seleccione categoría" required>
-                        <option >Seleccione categoría</option>
+                        <option value="0" >General</option>
                         @foreach ($categories as $category)
                         <option style="padding: 10px;" value="{{$category->id}}">{{$category->name}}</option>    
                         @endforeach

@@ -8,8 +8,12 @@ class TestController extends Controller
 {
     public function welcome()
     {   
-        $products=Product::paginate(6);
-        return view('welcome')->with(compact('products'));
+       //es como hacer una consulta enjoi
+        $categories=Category::has('products')->get();
+        return view('welcome')->with(compact('categories'));
+
+      /*   $products=Product::paginate(6);
+        return view('welcome')->with(compact('products')); */
        // return view('welcome');
     }
 }

@@ -16,13 +16,20 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/',[TestController::class,'welcome']);
 Route::get('/','TestController@welcome');
 
- Auth::routes();
- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/search', 'SearchController@show');
+Route::get('/products/json', 'SearchController@data');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('show');
 Route::get('/products/{id}', 'ProductController@show');//mostrar las imagenes del producto
 Route::post('/cart', 'CartDetailController@store');//editar lo
 Route::delete('/cart', 'CartDetailController@destroy');//eliminar los producto pedido
 Route::post('/order', 'CartController@update');//enviar los produtos pedidos a la bd
+Route::get('/categories/{category}', 'CategoryController@show');
+
 
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {

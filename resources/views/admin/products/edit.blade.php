@@ -48,6 +48,22 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="form-group label-floating">
+                <label class="control-label">Categoría del producto</label>
+                <select name="category_id" class="form-control"title="Seleccione categoría" required>
+                    <option value="0" >General</option>
+                    @foreach ($categories as $category)
+                    <option value="{{$category->id}}" 
+                        @if ($category->id==old('category_id',$product->category_id))selected   
+                        @endif>{{$category->name}}</option>    
+                    @endforeach
+                </select>
+                </div>
+                </div>
+            </div>
+            
             <textarea class="form-control" name="long_description" placeholder="Descripcion detallada del producto" rows="5">
                 {{old('long_description',$product->long_description)}}
             </textarea>
