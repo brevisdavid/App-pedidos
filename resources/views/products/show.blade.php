@@ -15,6 +15,7 @@
                        
                         <div class="name">
                             <h3 class="title">{{$product->name}}</h3>
+                            <strong>${{$product->price}}</strong>
                             <h6>{{$product->category->name}}</h6>
                         </div>
                         @if (session('exito'))
@@ -27,10 +28,21 @@
                 <div class="description text-center">
                     <p>{{$product->long_description}}</p>
                 </div>
-                <div class="text-center"> 
+                <div class="text-center">
+                @if (auth()->check())
                 <button class="btn btn-primary btn-round"data-toggle="modal" data-target="#modalAddToCar">
-                    <i class="material-icons">add</i> Añadir al carrito
-                </button>
+                    <i class="material-icons">add_shopping_cart</i> Añadir al carrito
+                </button> 
+                <a href="{{url('/')}}" class="btn btn-info btn-round">
+                    <i class="material-icons">undo</i> Seguir comprando
+                </a> 
+                <a href="/home" class="btn btn-round">
+                <i class="material-icons">shopping_cart</i> Ver tú carrito</a>     
+                @else
+                <a href="{{url('/login?redirect_to='.url()->current())}}" class="btn btn-primary btn-round">
+                    <i class="material-icons">add_shopping_cart</i> Añadir al carrito
+                </a>
+                @endif
                 </div>
 
  

@@ -20,7 +20,7 @@
                </ul>
             </div>
             @endif
-            <form method="post" action="{{url('/admin/categories/'.$category->id.'/edit')}}">
+            <form method="post" action="{{url('/admin/categories/'.$category->id.'/edit')}}"enctype="multipart/form-data">
              {{ csrf_field() }}
             <div class="row">
              <div class="col-sm-6">
@@ -28,13 +28,24 @@
                     <label class="control-label">Nombre de la categoría</label>
                     <input type="text" class="form-control" name="name" value="{{$category->name}}">
                 </div>
-                <div class="form-group label-floating">
+             </div>
+             <div class="col-sm-6">
+                    <label class="control-label">Imagen de la categoría</label>
+                    <input type="file" class="" name="image">
+                    @if ($category->image)
+                    <p class="help-block">Subir si sólo requiere remplazar la <a href="{{asset('/images/categories/'.$category->image)}}" 
+                    target="_blank">imagen actual</a>
+                    </p>
+                    @endif
+             </div>
+            </div>
+             <div class="form-group label-floating">
                     <label class="control-label">Descripción categoría</label>
                     <input type="text" class="form-control" name="description"value="{{old('description',$category->description)}}">
-                </div> {{--{{$product->description}} sintasis para mostrar los productos ingresados--}}
-              </div>
+             </div> {{--{{$product->description}} sintasis para mostrar los productos ingresados--}}
+              
             
-            </div>
+            
           
            {{--  <textarea class="form-control" name="description" placeholder="Descripcion detallada del producto" rows="5">
                 {{old('description',$category->description)}}

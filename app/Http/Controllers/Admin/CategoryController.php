@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use File;
 class CategoryController extends Controller
 {
    
@@ -36,7 +37,18 @@ class CategoryController extends Controller
             $category=new Category();
             $category->name=$request->input('name');
             $category->description=$request->input('description');
-            $category->save();//Insertamos productos a la db
+            if ($request->hasFile('image')) {
+                $file=$request->file('image');
+                $path=public_path().'/images/categories';
+                $fileName=uniqid().$file->getClientOriginalName();
+                $moved=$file->move($path,$fileName);
+                //Crearemos registro a la base de datos tabla product_images
+                if ($moved) {
+                $category->image=$fileName;
+               // $productImage->featured=('false');
+                $category->save();//Insertamos productos a la db
+            }
+         }
             return redirect('/admin/categories');
     }
 
@@ -61,8 +73,24 @@ class CategoryController extends Controller
             $category=Category::find($id);
             $category->name=$request->input('name');
             $category->description=$request->input('description');
-            $category->save();//Insertamos productos a la db
+            if ($request->hasFile('image')) {
+                $file=$request->file('image');
+                $path=public_path().'/images/categories';
+                $fileName=uniqid().$file->getClientOriginalName();
+                $moved=$file->move($path,$fileName);
+                //Crearemos registro a la base de datos tabla product_images
+                if ($moved) {
+                $anteriorPath=$path.'/'.$category->image;
+                $category->image=$fileName;
+               // $productImage->featured=('false');
+               $save=$category->save();//Insertamos imagen categoria a la db
+               if($save)//con esta codicion realizamos el reemplazo de la imagen y a su ves la eliminamos
+                File::delete($anteriorPath);
+            }
+         }
+           // $category->save();
             return redirect('/admin/categories');
+            
     }
     
 
@@ -80,20 +108,9 @@ class CategoryController extends Controller
    //
     
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy($id)
     {
         $category=Category::find($id);

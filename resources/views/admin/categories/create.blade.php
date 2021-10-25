@@ -21,7 +21,7 @@
                  
              @endif
         
-          <form method="post" action="{{url('/admin/categories')}}">
+          <form method="post" action="{{url('/admin/categories')}}" enctype="multipart/form-data">
              {{ csrf_field() }}
            <div class="row">
              <div class="col-sm-6">
@@ -29,6 +29,10 @@
                     <label class="control-label">Nombre de la categoría</label>
                     <input type="text" class="form-control" name="name" value="{{old('name')}}">
                 </div>
+             </div>
+             <div class="col-sm-6">
+                <label class="control-label">Imagen de la categoría</label>
+                <input type="file" class="" name="image">
              </div>
             </div>
              <textarea class="form-control" name="description" placeholder="Descripcion de la categoría" rows="5">

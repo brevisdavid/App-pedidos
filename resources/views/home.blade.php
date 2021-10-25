@@ -11,7 +11,7 @@
     <div class="container"> 
 
         <div class="section ">
-            <h2 class="title text-center">Dashboard</h2>
+            <h2 class="title text-center">Tú listado de pedidos</h2>
             <div class="card-body">
                 @if (session('notificacion'))
                     <div class="alert alert-success" role="alert">
@@ -21,7 +21,7 @@
                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                     <li class="active">
                         <a href="#dashboard" role="tab" data-toggle="tab">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons">shopping_cart</i>
                             Carrito de compras
                         </a>
                     </li>
@@ -32,9 +32,14 @@
                             Pedidos realizados
                         </a>
                     </li>
+                    <li>
+                        <a href="{{url('/')}}"  role="tab"class="btn btn-default">
+                            <i class="material-icons">add_shopping_cart</i> Seguir comprando
+                        </a>   
+                    </li>
                 </ul>
                 <hr>
-                <p style="font-size:15px;">Tu carrito de compra presenta {{auth()->user()->cart->details->count()}} productos</p>     
+                <p style="font-size:15px;">Tu carrito de compra presenta {{auth()->user()->cart->details->count()}} productos </p>     
                <table class="table">
                 <thead>
                     <tr>
@@ -78,7 +83,7 @@
                 </tbody>
             </table>
             <p>
-                <strong>Importe a pagar:</strong>{{auth()->user()->cart->total}}
+                <strong>Total a pagar:</strong>{{auth()->user()->cart->total}}
             </p>
             <div class="text-center">
            <form action="{{url('/order')}}" method="POST">

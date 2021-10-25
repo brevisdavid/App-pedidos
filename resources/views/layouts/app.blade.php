@@ -32,7 +32,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/logotipo.png')}}" width="350" height="140"  alt=""></a>
+        		<a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/logotipo.png')}}" width="300" height="130"  alt=""></a>
         	</div>
 
         	<div class="collapse navbar-collapse" id="navigation-example">
@@ -56,7 +56,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						    <a href="/home" class="btn btn-block">Dashboard</a>
+						    <a href="/home" class="btn btn-block">Detalle de compra</a>
 							@if (auth()->user()->admin)
 							<a href="{{url('/admin/categories')}}" class="btn btn-block">Gestionar categoría</a>
 						    <a href="{{url('/admin/products')}}"class="btn btn-block">Gestionar productos</a>
@@ -75,17 +75,15 @@
                 @endguest
 		            <li>
 						<a href="https://wa.me/56968437401?" class="whatsapp btn btn-simple btn-white btn-just-icon" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
-		               {{--  <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-				         <i class="fa fa-twitter"></i> <i class="bi bi-whatsapp"></i>
-						</a> --}}
+		            
 		            </li>
 		            <li>
-		                <a href="https://www.facebook.com/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+		                <a href="https://www.facebook.com/limpiazo.oficial" target="_blank" class="btn btn-simple btn-white btn-just-icon">
 							<i class="fa fa-facebook-square"></i>
 						</a>
 		            </li>
 					<li>
-		                <a href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+		                <a href="https://www.instagram.com/limpiazo" target="_blank" class="btn btn-simple btn-white btn-just-icon">
 							<i class="fa fa-instagram"></i>
 						</a>
 		            </li>
