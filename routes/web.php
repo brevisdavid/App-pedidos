@@ -38,7 +38,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(
     Route::post('/products', 'ProductController@store');//registrar
     Route::get('/products/{id}/edit', 'ProductController@edit');//editar los registros
     Route::post('/products/{id}/edit', 'ProductController@update');//actualizar
-    Route::post('/products/{id}/delete', 'ProductController@destroy');//eliminar form  
+    Route::delete('/products/{id}', 'ProductController@destroy');//eliminar form  
     Route::get('/products/{id}/images', 'ImageController@index');//registrar imagenes
     Route::post('/products/{id}/images', 'ImageController@store');//formulario
     Route::delete('/products/{id}/images', 'ImageController@destroy');//Eliminar imagenes
@@ -49,7 +49,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(
     Route::post('/categories', 'CategoryController@store');//registrar
     Route::get('/categories/{id}/edit', 'CategoryController@edit');//editar los registros
     Route::post('/categories/{id}/edit', 'CategoryController@update');//actualizar
-    Route::post('/categories/{id}/delete', 'CategoryController@destroy');//Eliminar imagenes
+    Route::delete('/categories/{id}', 'CategoryController@destroy');//Eliminar imagenes
     
 
 });

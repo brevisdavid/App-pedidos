@@ -90,7 +90,7 @@
                     @endforeach   
                 </div> 
                     <div class="text-center">
-                        {{-- {{$products->links()}} --}}
+                        {{-- {{$products->links()}}{{$detail->cantidad*$detail->product->price}} --}}
                     </div>               
                 
             </div>
@@ -100,34 +100,28 @@
         <div class="section landing-section">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="text-center title">¡Aun no te has registrado!</h2>
+                    <h2 class="text-center title">¿Aún no te has registrado?</h2>
                     <h4 class="text-center description">Si deseas contáctanos sobre cualquier producto. Estaremos atentos a cualquier inquietud que quieras.</h4>
-                    <form class="contact-form">
+                    <form class="contact-form" method="GET" action="{{route('register')}}">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
-                                    <label class="control-label">Your Name</label>
-                                    <input type="email" class="form-control">
+                                    <label class="control-label">Ingresa tu nombre</label>
+                                    <input id="name" type="text" class="form-control"name="name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
-                                    <label class="control-label">Your Email</label>
-                                    <input type="email" class="form-control">
+                                    <label class="control-label">Ingresa tu correo </label>
+                                    <input id="email" type="email" class="form-control"name="email">
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group label-floating">
-                            <label class="control-label">Your Messge</label>
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4 text-center">
-                                <button class="btn btn-primary btn-raised">
-                                    Send Message
-                                </button>
+                                <button type="submit" class="btn btn-primary btn-raised">
+                                     Ingresar
+                                </button> 
                             </div>
                         </div>
                     </form>
@@ -143,7 +137,7 @@
     (function () {
         var options = {
             whatsapp: "+56968437401", // WhatsApp number
-            call_to_action: "Estamos a disposición", // Call to action
+            call_to_action: "Estamos disposición", // Call to action
             position: "right", // Position may be 'right' or 'left'
         };
         var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;

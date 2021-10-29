@@ -83,7 +83,7 @@
                 </tbody>
             </table>
             <p>
-                <strong>Total a pagar:</strong>{{auth()->user()->cart->total}}
+                <strong>Total a pagar : </strong>{{auth()->user()->cart->total}}
             </p>
             <div class="text-center">
            <form action="{{url('/order')}}" method="POST">

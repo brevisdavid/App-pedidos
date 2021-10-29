@@ -18,7 +18,7 @@ class CategoryController extends Controller
     
     public function create()
     {
-        return view ('admin.categories.create');  
+        return view ('admin.categories.create'); //formulario de registro 
     }
 
 
@@ -106,15 +106,12 @@ class CategoryController extends Controller
         return view('admin.categories.edit')->with(compact('category')); 
     }
    //
-    
-
-   
 
   
     public function destroy($id)
     {
-        $category=Category::find($id);
-        $category->delete();
+       $category=Category::find($id);
+       $category->delete();
         return back();   
     }
 }

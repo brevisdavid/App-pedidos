@@ -18,7 +18,7 @@
                                 <span class="input-group-addon">
                                     <i class="material-icons">face</i>
                                 </span>
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Ingrese su nombre..." name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Ingrese su nombre..." name="name" value="{{ old('name',$name) }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                                 <span class="input-group-addon">
                                     <i class="material-icons">email</i>
                                 </span>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Correo electronico..." value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Correo electronico..." value="{{ old('email',$email) }}" required autocomplete="email" autofocus>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

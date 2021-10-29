@@ -35,9 +35,10 @@
                                 <td><img src="{{$category->featured_image_url}}" height="50"></td>
                                 <td class="td-actions text-right">
                                    
-                                    <form action="{{url('/admin/categories/'.$category->id.'/delete')}}" method="post">
+                                    <form action="{{url('/admin/categories/'.$category->id)}}" method="post">
                                         {{ csrf_field() }}
-                                        <a href="" type="button" rel="tooltip" title="Ver Categoría" class="btn btn-info btn-simple btn-xs">
+                                        {{ method_field('DELETE') }}
+                                        <a href="#" type="button" rel="tooltip" title="Ver Categoría" class="btn btn-info btn-simple btn-xs">
                                             <i class="fa fa-info"></i>
                                         </a>
                                         <a href="{{url('/admin/categories/'.$category->id.'/edit')}}" rel="tooltip" title="Editar Categoría" class="btn btn-success btn-simple btn-xs">
