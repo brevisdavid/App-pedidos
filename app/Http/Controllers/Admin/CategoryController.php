@@ -24,23 +24,16 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $messages=[
-            'name.required'=> 'Debes ingresar nombre de la categoría',
-            'name.min'=> 'El nombre de categoría debe tener mas de 3 caracteres',
-            'description.max'=> 'AH sobreepasado numero de caracteres'
-         ];
-            $rules=[//reglas de validacion
-            "name"=> 'required|min:3',
-            "description"=> 'max:200'
-            ]; 
-            $this->validate($request,$rules,$messages);
-            $category=new Category();
+       
+            $this->validate($request,Category::$rules,Category::$messages);
+           $category=Category::create($request->only('name','description'));
+            /*$category=new Category();
             $category->name=$request->input('name');
-            $category->description=$request->input('description');
+            $category->description=$request->input('description'); */
             if ($request->hasFile('image')) {
                 $file=$request->file('image');
                 $path=public_path().'/images/categories';
-                $fileName=uniqid().$file->getClientOriginalName();
+                $fileName=uniqid().'-'.$file->getClientOriginalName();
                 $moved=$file->move($path,$fileName);
                 //Crearemos registro a la base de datos tabla product_images
                 if ($moved) {
@@ -58,25 +51,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request,Category $category)
     {
-        $messages=[
-            'name.required'=> 'Debes ingresar nombre de la categoría',
-            'name.min'=> 'El nombre de categoría debe tener mas de 3 caracteres',
-            'description.max'=> 'AH sobreepasado numero de caracteres'
-         ];
-            $rules=[//reglas de validacion
-            "name"=> 'required|min:3',
-            "description"=> 'max:200'
-            ]; 
-            $this->validate($request,$rules,$messages);
-            $category=Category::find($id);
+            $this->validate($request, Category::$rules,Category::$messages);
+            $category->update($request->all());
+           /*  $category=Category::find($id);
             $category->name=$request->input('name');
             $category->description=$request->input('description');
+           */
+            
             if ($request->hasFile('image')) {
                 $file=$request->file('image');
                 $path=public_path().'/images/categories';
-                $fileName=uniqid().$file->getClientOriginalName();
+                $fileName=uniqid().'-'.$file->getClientOriginalName();
                 $moved=$file->move($path,$fileName);
                 //Crearemos registro a la base de datos tabla product_images
                 if ($moved) {
@@ -100,17 +87,17 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $category=Category::find($id);
+        // $category=Category::find($id);
         return view('admin.categories.edit')->with(compact('category')); 
     }
    //
 
   
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-       $category=Category::find($id);
+       //$category=Category::find($id);
        $category->delete();
         return back();   
     }

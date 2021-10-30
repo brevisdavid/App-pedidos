@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {   
     protected $fillable = ['name','description'];
-    
+    public static $messages=[
+        'name.required'=> 'Debes ingresar nombre de la categoría',
+        'name.min'=> 'El nombre de categoría debe tener mas de 3 caracteres',
+        'description.max'=> 'AH sobreepasado numero de caracteres'
+     ];
+    public static $rules=[//reglas de validacion
+        "name"=> 'required|min:3',
+        "description"=> 'max:200'
+     ]; 
     public function products(){
         return $this->hasMany(Product::class);
     }
@@ -25,6 +33,6 @@ class Category extends Model
         }
         /* $featuredProduct=$this->products()->first();
         return $featuredProduct->featured_image_url; */
-        return'/images/defauls.png';
+        return'/images/defaults.png';
     }
 }

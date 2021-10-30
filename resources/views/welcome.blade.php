@@ -76,7 +76,7 @@
                     @foreach ($categories as $item)
                         
                     
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="team-player">
                              <img src="{{$item->featured_image_url}}" alt="Imagen representativa de la categoria {{$item->name}}" class="img-raised img-circle"> 
                             <h4 class="title">
