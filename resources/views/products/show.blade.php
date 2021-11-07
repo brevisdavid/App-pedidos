@@ -14,8 +14,9 @@
                         </div>
                        
                         <div class="name">
-                            <h3 class="title">{{$product->name}}</h3>
-                            <strong>${{$product->price}}</strong>
+                            <h3 class="title">{{$product->name}}
+                            <p style="color:#2323BF">$ {{$product->price}}</p>
+                            </h3>
                             <h6>{{$product->category->name}}</h6>
                         </div>
                         @if (session('exito'))
