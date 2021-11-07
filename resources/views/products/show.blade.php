@@ -33,16 +33,17 @@
                 <button class="btn btn-primary btn-round"data-toggle="modal" data-target="#modalAddToCar">
                     <i class="material-icons">add_shopping_cart</i> Añadir al carrito
                 </button> 
-                <a href="{{url('/')}}" class="btn btn-info btn-round">
-                    <i class="material-icons">undo</i> Seguir comprando
-                </a> 
-                <a href="/home" class="btn btn-round">
-                <i class="material-icons">shopping_cart</i> Ver tú carrito</a>     
+                   
                 @else
                 <a href="{{url('/login?redirect_to='.url()->current())}}" class="btn btn-primary btn-round">
                     <i class="material-icons">add_shopping_cart</i> Añadir al carrito
                 </a>
                 @endif
+                <a href="{{url('/')}}" class="btn btn-info btn-round">
+                    <i class="material-icons">undo</i> Seguir comprando
+                </a> 
+                <a href="/home" class="btn btn-round">
+                <i class="material-icons">shopping_cart</i> Ver tú carrito</a>  
                 </div>
 
  

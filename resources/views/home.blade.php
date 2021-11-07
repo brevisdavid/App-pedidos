@@ -33,7 +33,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('/')}}"  role="tab"class="btn btn-default">
+                        <a href="{{url('/')}}"  role="tab" class="btn " style="border-radius:10px;background:#4267B2;color:#E9EBEE; btn.hover:{animation:shadow-pulse 1000ms 1; background-color:#20D86A;}">
                             <i class="material-icons">add_shopping_cart</i> Seguir comprando
                         </a>   
                     </li>
@@ -82,8 +82,13 @@
                     @endforeach
                 </tbody>
             </table>
-            <p>
-                <strong>Total a pagar : </strong>{{auth()->user()->cart->total}}
+            <p style="font-size: 15px">
+                <strong>Total a pagar : </strong> $ {{auth()->user()->cart->total}}
+                
+            </p>
+            <p style="font-size: 15px">
+                <strong>Cantidad productos : </strong>{{auth()->user()->cart->stock}}
+                
             </p>
             <div class="text-center">
            <form action="{{url('/order')}}" method="POST">

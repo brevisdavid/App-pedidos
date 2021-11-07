@@ -21,11 +21,6 @@ class ImageController extends Controller
     }
     
 
-  
-    public function create()
-    {
-        //
-    }
 
   
     public function store(Request $request,$id)
@@ -42,9 +37,10 @@ class ImageController extends Controller
       // $productImage->featured=('false');
        $productImage->product_id=$id;
        $productImage->save();//Insert
-       return back();
-           //$table->string('image'); tabla migraciones
+      //$table->string('image'); tabla migraciones
        }
+       return back();
+
     }
    
    

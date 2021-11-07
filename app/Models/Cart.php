@@ -20,4 +20,22 @@ class Cart extends Model
         return $total;
         
     }
+     public function getStockAttribute()
+
+    {   
+        $stock=0;
+        foreach($this->details as $detail){
+            $stock-=$detail->stock-$detail->cantidad;
+        }
+        return $stock;
+    } 
+    public function getCantidttribute()
+
+    {   
+        $cantid=0;
+        foreach($this->details as $detail){
+            $cantid=$detail->cantidad-$detail->product->stock;
+        }
+        return $cantid;
+    } 
 }

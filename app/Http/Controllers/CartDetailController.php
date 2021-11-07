@@ -7,7 +7,11 @@ use App\Models\CartDetail;
 
 class CartDetailController extends Controller
 {
-   
+    public function _construct()
+    {
+       $this->middleware('auth');
+    }
+
 
     public function store(Request $request)
     {
@@ -28,11 +32,7 @@ class CartDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      *

@@ -52,19 +52,14 @@
              </div>
             </div>
             <div class="row">
-                    {{-- <div class="col-sm-6">
-                    <div class="form-group label-floating">
-                        <label class="control-label">Descripción Corta</label>
-                        <input type="text" class="form-control" name="description" value="{{old('description')}}"  >
-                    </div>
-                    </div> --}}
+                
                     <div class="col-sm-6">
                     <div class="form-group label-floating">
-                    <label class="control-label">Categoría del producto</label>
+                    {{-- <label class="control-label">Categoría del producto</label> --}}
                     <select name="category_id" class="form-control"title="Seleccione categoría" required>
-                        <option value="0" >General</option>
+                        <option value="" >Categoría del producto</option> 
                         @foreach ($categories as $category)
-                        <option style="padding: 10px;" value="{{$category->id}}">{{$category->name}}</option>    
+                        <option style="padding: 10px;font-size:15px;" value="{{$category->id}}">{{$category->name}}</option>    
                         @endforeach
                     </select>
                     </div>

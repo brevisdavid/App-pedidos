@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+	{{-- <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png"> --}}
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>@yield('title',config('app.name'))</title>
+	<link rel="icon" href="{{asset('img/iconoL.ico')}}">
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -40,18 +41,18 @@
                     @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+                            <a style="font-size: 15px;"class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                            <a style="font-size: 15px;"class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle"style="font-size: 15px;" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}<span class="caret"></span>
                         </a>
 

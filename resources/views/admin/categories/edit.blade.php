@@ -31,7 +31,7 @@
              </div>
              <div class="col-sm-6">
                     <label class="control-label">Imagen de la categoría</label>
-                    <input type="file" class="" name="image">
+                    <input type="file" name="image">
                     @if ($category->image)
                     <p class="help-block">Subir si sólo requiere remplazar la <a href="{{asset('/images/categories/'.$category->image)}}" 
                     target="_blank">imagen actual</a>
@@ -40,7 +40,7 @@
              </div>
             </div>
              <div class="form-group label-floating">
-                    <label class="control-label">Descripción categoría</label>
+                    <label class="control-label">Descripción de categoría</label>
                     <input type="text" class="form-control" name="description"value="{{old('description',$category->description)}}">
              </div> {{--{{$product->description}} sintasis para mostrar los productos ingresados--}}
               

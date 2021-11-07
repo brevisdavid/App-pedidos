@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title','Bienvenido a '.config('app.name'))
+<link rel="icon"href="../assets/img/iconoL.ico">
 @section('body-class','landing-page')
 <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 @section('content')
@@ -7,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="title">Bienvenido a nuestra empresa utiles de aseo.</h2>
+                <h2 class="title">Bienvenido a nuestra distribuidora de articulos de aseo y productos de limpieza.</h2>
                 <h4>Realizar pedidos en linea para gestionar las entregas de los productos a domicilio</h4>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
                     <i class="fa fa-play"></i> Como funciona
@@ -22,7 +23,7 @@
         <div class="section text-center section-landing">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="title">Limpiazo confiabilidad</h2>
+                    <h2  class="title">Limpiazo confiabilidad</h2>
                     <h5 class="description">Puedes comparar precios elegir productos hacer pedidos cuando estes seguro</h5>
                 </div>
             </div>
@@ -101,7 +102,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="text-center title">¿Aún no te has registrado?</h2>
-                    <h4 class="text-center description">Si deseas contáctanos sobre cualquier producto. Estaremos atentos a cualquier inquietud que quieras.</h4>
+                    <h4 class="text-center description">Estas a solo dos paso para adquerir tus productos de forma segura en tu hogar. Estaremos atentos a tus dudas en nuestras redes sociales.</h4>
                     <form class="contact-form" method="GET" action="{{route('register')}}">
                         <div class="row">
                             <div class="col-md-6">
@@ -120,7 +121,7 @@
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4 text-center">
                                 <button type="submit" class="btn btn-primary btn-raised">
-                                     Ingresar
+                                     Registrar
                                 </button> 
                             </div>
                         </div>

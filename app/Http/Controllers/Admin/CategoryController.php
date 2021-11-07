@@ -25,7 +25,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
        
-            $this->validate($request,Category::$rules,Category::$messages);
+           $this->validate($request,Category::$rules,Category::$messages);
            $category=Category::create($request->only('name','description'));
             /*$category=new Category();
             $category->name=$request->input('name');
@@ -54,7 +54,7 @@ class CategoryController extends Controller
     public function update(Request $request,Category $category)
     {
             $this->validate($request, Category::$rules,Category::$messages);
-            $category->update($request->all());
+            $category->update($request->only('name','description'));
            /*  $category=Category::find($id);
             $category->name=$request->input('name');
             $category->description=$request->input('description');
@@ -70,8 +70,8 @@ class CategoryController extends Controller
                 $anteriorPath=$path.'/'.$category->image;
                 $category->image=$fileName;
                // $productImage->featured=('false');
-               $save=$category->save();//Insertamos imagen categoria a la db
-               if($save)//con esta codicion realizamos el reemplazo de la imagen y a su ves la eliminamos
+               $saved=$category->save();//Insertamos imagen categoria a la db
+               if($saved)//con esta codicion realizamos el reemplazo de la imagen y a su ves la eliminamos
                 File::delete($anteriorPath);
             }
          }
@@ -81,12 +81,7 @@ class CategoryController extends Controller
     }
     
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Category $category)
     {
         // $category=Category::find($id);

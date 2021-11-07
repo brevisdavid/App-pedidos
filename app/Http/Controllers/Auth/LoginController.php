@@ -37,9 +37,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-     public function showLoginFrom(IlluminateRequest $request)
+
+     public function showRegistrationFrom(IlluminateRequest $request)
      {
         if ($request->has('redirect_to')) {
+
             session()->put('redirect_to',$request->input('redirect_to'));
 
         }

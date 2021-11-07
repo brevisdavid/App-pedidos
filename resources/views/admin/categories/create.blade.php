@@ -32,12 +32,12 @@
              </div>
              <div class="col-sm-6">
                 <label class="control-label">Imagen de la categoría</label>
-                <input type="file" class="" name="image">
+                <input type="file"  name="image">
              </div>
             </div>
              <textarea class="form-control" name="description" placeholder="Descripcion de la categoría" rows="5">
-             {{old('description')}}
-             </textarea>
+              Descripción de la categoría {{old('description')}}
+             </textarea> 
              <button type="submit"  class="btn btn-success">Registrar categoría</button>
              <a href="{{url('/admin/categories')}}" class="btn btn-default">Cancelar</a>
              </form>

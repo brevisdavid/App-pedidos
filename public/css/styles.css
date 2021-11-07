@@ -1,6 +1,15 @@
-/* .team{
+ .team{
   padding-bottom: 50px;
-}  */
+}  
+/* @import url('https://fonts.googleapis.com/css2?family=Zen+Antique=Fruktur&family=Montserrat:wght@100&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+h2.title{
+  /* font-family:'Fruktur',cursive ; */
+  font-family: 'Zen Antique', serif;
+  font-weight:6OO;
+  font-size: 40PX;
+}
+
   .team.row.col-md-4{
     margin-bottom: 5em;
 }  
