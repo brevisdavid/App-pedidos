@@ -34,7 +34,11 @@
       @endforeach
     </ul>
     <p>
-      <strong>Importe a pagar:</strong>{{$cart->total}}
+      <strong>Total a pagar:</strong>{{$cart->total}}
+      
+    </p>
+    <p>
+      <strong>Cantidad de productos:</strong>{{$cart->stock}}
     </p>
     <hr>
     <p>

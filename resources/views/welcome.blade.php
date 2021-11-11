@@ -83,9 +83,10 @@
                             <h4 class="title">
                                 <a href="{{url('/categories/'.$item->id)}}">{{$item->name}}</a>
                                 <br/>
-                                 <small class="text-muted">{{$item->category_name}}</small> 
-                            </h4>{{--{{$product->category->name}}{{$item->category ? $item->category ->name :'General'}}{{$item->price}}--}}
-                            <p class="description">{{$item->description}}</p>
+                                 <small class="text-muted">{{$item->category_name}}</small>
+                            </h4>
+                            <p style="font-size:16px;" class="description">{{$item->description}}</p>
+                            <br/>
                         </div> 
                     </div>
                     @endforeach   
