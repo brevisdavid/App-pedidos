@@ -1,5 +1,5 @@
 @extends('layouts.app') 
-@section('title','Chanchito | Dashboard') 
+@section('title','Distribuidora| Limpiazo') 
 @section('body-class','profile-page')
 @section('content') 
     <div class="header header-filter" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/30/16/49/putz-bucket-1290951_960_720.jpg');"></div>

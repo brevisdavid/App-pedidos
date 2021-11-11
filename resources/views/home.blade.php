@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-@section('title','Chanchito | Home')
+@section('title','Limpiazo | Home')
 @section('body-class','product-page')
 @section('content') 
 <div class="header header-filter" style="background-image: url('https://pbs.twimg.com/media/EYT5JELUcAA-Vx1.jpg:large');">

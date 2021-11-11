@@ -1,5 +1,5 @@
 @extends('layouts.app') 
-@section('title','Chanchito | Dashboard') 
+@section('title','Distribuidora | Limpiazo') 
 @section('body-class','profile-page')
 @section('styles')
     <style>
@@ -60,7 +60,8 @@
                 
                                     <p style="color:#2323BF">$ {{$product->price}}</p>
                                 </h4>
-                                <p class="description">{{$product->description}}</p>
+                                <p style="font-size:16px;"class="description">{{$product->description}}</p>
+                                <br/>
                             </div> 
                         </div>
                         @endforeach   
