@@ -2,21 +2,21 @@
 @extends('layouts.app')
 @section('body-class','product-page')
 @section('title','Listado de Productos')
-@section('content') 
-<div class="header header-filter" style="background-image: url('{{asset('img/limpio.png')}}');">');">
-   
+@section('content')
+<link rel="stylesheet" href="{{asset('css/styles.css')}}"> 
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
+<div class="header header-filter" style="background-image: url('{{asset('img/limpio.png')}}');">
 </div>
-
 <div class="main main-raised">
     <div class="container">
         
         <div class="section text-center">
             <h2 class="title">Listado de Productos</h2>
-
+           
             <div class="team">
                 <div class="row">
                     <a href="{{url('/admin/products/create')}}"  class="btn btn-primary">Nuevo producto</a>
-                    <table class="table">
+                    <table class="table table-striped" id="product">
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
@@ -61,15 +61,46 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$products->links()}}               
+                     {{-- {{$products->links()}}            --}}
                 </div>
                 
             </div>
 
         </div>
     </div>
+    
 </div>
 
 @include('includes.footer')
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
+<script>
+     $('#product').DataTable({
+         responsive:true,
+         autoWidth:false,
+         "language": {
+            "lengthMenu": "Mostrar " +`<select>
+             <option value='10'>10</option>
+             <option value='25'>25</option>
+             <option value='50'>50</option>
+             <option value='100'>100</option>
+             <option value='-1'>all</option>
+             </select>`
+             + " Registro de Productos",
+            "zeroRecords": "No hay registro del producto",
+            "info": "Mostrando la página _PAGE_ de _PAGES_",
+            "infoEmpty": "No records available",
+            "infoFiltered": "(filtrado de _MAX_ registros)",
+            "search":"Buscar"+`<input type="text" class="form form-control"style="margin-botton: 50px;">`,
+            "paginate":{
+            "next":"Siguiente",
+            "previous":"Anterior"
+            }
+        }
+     });
+</script>
 @endsection
+<input type="text" style="margin-top:5px" style="margin-left: 20px">

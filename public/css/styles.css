@@ -63,3 +63,9 @@ h2.title{
   .tt-suggestion p {
     margin: 0;
   }
+  #particulas{
+    height: 100vh;
+    width: 100%;
+    position:cover;
+    z-index:-1;
+  }

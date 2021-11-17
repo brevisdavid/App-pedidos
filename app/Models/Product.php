@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $fillable = [
+        'id', 
+        'name',
+        'description',
+        'long_description',
+        'price',
+        'stock',
+    ];
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -31,5 +39,14 @@ class Product extends Model
         
             return'General';
       }
+      public function scopeName($query, $name)
+      {
+          if($name)
+              return $query->where('name','LIKE', "%$name%")
+              ->orWhere('description','LIKE', "%$name%")
+              ->orWhere('category','LIKE', "%$name%");
+  
+      }
+    
      
 }

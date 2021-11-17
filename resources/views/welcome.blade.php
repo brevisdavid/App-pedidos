@@ -4,6 +4,7 @@
 @section('body-class','landing-page')
 <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 @section('content')
+{{-- <div id="particulas"></div> --}}
 <div class="header header-filter" style="background-image: url('{{asset('img/pajaro.jpg')}}');">
     <div class="container">
         <div class="row">
@@ -173,4 +174,5 @@
             });  
          });
     </script>
+    <script src="js\particles.min.js"></script>
 @endsection
