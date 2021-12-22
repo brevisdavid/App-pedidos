@@ -20,6 +20,16 @@ class Cart extends Model
         return $total;
         
     }
+      public function getDestockAttribute()
+      {
+        $destock=0;
+        foreach ($this->details as $detail){
+            $destock+=$detail->cantidad-$detail->product->stock;
+        } 
+        return $destock;
+       
+      }
+
      public function getStockAttribute()
 
     {   

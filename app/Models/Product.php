@@ -39,14 +39,13 @@ class Product extends Model
         
             return'General';
       }
-      public function scopeName($query, $name)
+     /*  public function add_stock($cantidad)
       {
-          if($name)
-              return $query->where('name','LIKE', "%$name%")
-              ->orWhere('description','LIKE', "%$name%")
-              ->orWhere('category','LIKE', "%$name%");
-  
+          $this->increment('stock',$cantidad);
       }
-    
+      public function des_stock($cantidad)
+      {
+        $this->decrement('stock',$cantidad);
+      } */
      
 }

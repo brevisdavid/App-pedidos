@@ -36,7 +36,8 @@
                                 <td>{{$product->description}}</td>
                                 <td>{{$product->category_name}}</td>
                                 <td class="text-right">{{$product->price}}</td>
-                                <td class="text-right">{{$product->stock}}</td>
+                                <td class="text-right">{{$product->stock}}</td> 
+                        
                                 <td class="td-actions text-right">
                                    
                                     <form method="post" action="{{url('/admin/products/'.$product->id)}}" >
@@ -94,7 +95,7 @@
             "info": "Mostrando la página _PAGE_ de _PAGES_",
             "infoEmpty": "No records available",
             "infoFiltered": "(filtrado de _MAX_ registros)",
-            "search":"Buscar"+`<input type="text" class="form form-control"style="margin-botton: 50px;">`,
+            "search":"Buscar",
             "paginate":{
             "next":"Siguiente",
             "previous":"Anterior"
@@ -103,4 +104,5 @@
      });
 </script>
 @endsection
-<input type="text" style="margin-top:5px" style="margin-left: 20px">
+{{-- +`<input type="text" class="form form-control"style="margin-botton: 50px;">`
+<input type="text" style="margin-top:5px" style="margin-left: 20px"> --}}

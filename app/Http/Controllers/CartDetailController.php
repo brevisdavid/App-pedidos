@@ -15,12 +15,13 @@ class CartDetailController extends Controller
 
     public function store(Request $request)
     {
+    
         $cartDetail=new CartDetail();
         $cartDetail->cart_id= auth()->user()->cart->id;
         $cartDetail->product_id= $request->product_id;
         $cartDetail->cantidad= $request->cantidad;
         $cartDetail->save();
-        $exito='El producto se a cargado correctamente a tu carito';
+        $exito='El producto se a cargado correctamente a tu carrito';
         return back()->with(compact('exito'));
      
      
