@@ -8,7 +8,7 @@
 <div class="header header-filter" style="background-image: url('{{asset('img/pajaro.jpg')}}');">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6">               
                 <h2 class="title">Distribuidora de articulos de aseo y productos de limpieza.</h2>
                 <h4>Realizar pedidos en linea para gestionar las entregas de los productos a domicilio</h4>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
